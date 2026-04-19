@@ -1,0 +1,4 @@
+USERS = []
+CLIENTS = []
+CUPONS = []
+EVENTS = []
