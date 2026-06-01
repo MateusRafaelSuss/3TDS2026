@@ -1,3 +1,4 @@
+from palestrante import Palestrante
 from datetime import datetime
 from decimal import Decimal
 from typing import List, Dict
@@ -5,7 +6,7 @@ from user import User
 from coupon import Coupon
 
 class Event:
-    def __init__(self, title: str, description: str, price: Decimal, date: datetime, location: str, users: List[User], regras: Dict):
+    def __init__(self, title: str, description: str, price: Decimal, date: datetime, location: str, users: List[User], regras: Dict, palestramtes: List[Palestrante]):
         self.title = title
         self.description = description  
         self.price = price
@@ -14,6 +15,7 @@ class Event:
         self.users = users if users is not None else []  
         self.regras = regras
         self.coupons: List[Coupon] = []  
+        self.palestrantes = palestramtes
         
     def __repr__(self):
         return f'{self.title}, {self.description}, {self.price}, {self.date}, {self.location}, {self.users}, {self.coupons}'
@@ -47,3 +49,10 @@ class Event:
     def add_coupons(self, coupons: List[Coupon]):
         for coupon in coupons:
             self.coupons.append(coupon)
+            
+    def add_palestrante(self, palestrante: Palestrante):
+        self.palestrantes.append(palestrante)
+        
+    def add_palestrantes(self, palestrantes: List[Palestrante]):
+        for palestrante in palestrantes:
+            self.palestrantes.append(palestrante)
