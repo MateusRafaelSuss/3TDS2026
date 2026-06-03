@@ -1,0 +1,3 @@
+VEICULOS = []
+CLIENTES = []
+LOCACOES = []
